@@ -28,28 +28,33 @@ Ao final deve se exibir uma mensagem:
 
 
 
-let nameHero = "Lord Lúdico" 
-let xpLevel = 2345
-let nivel = " "
+function classificarHeroi(nomeHeroi, xp) {
+    if (!Number.isFinite(xp) || xp < 0) {
+        return "Erro: informe uma quantidade de XP válida.";
+    }
 
-if(xpLevel <= 1000){
-        nivel = "Ferro"
-} else if ( xpLevel >= 1001 && xpLevel <= 2000){
-        nivel = "Bronze"
-} else if ( xpLevel >= 2001 && xpLevel <= 5000){
-        nivel= "Prata"
-} else if ( xpLevel >= 5001 && xpLevel <=  7000){
-        nivel = "Ouro"
-} else if ( xpLevel >= 7001 && xpLevel <= 8000){
-        nivel = "Platina"
-} else if ( xpLevel >= 8001 && xpLevel <= 9000){
-        nivel =  "Ascendente"
-} else if ( xpLevel >= 9001 && xpLevel <= 10000){
-        nivel = "Imortal"
-} else if ( xpLevel =  10001 ){
-         nivel = "Radiante"       
+    let nivel;
+
+    if (xp <= 1000) {
+        nivel = "Ferro";
+    } else if (xp <= 2000) {
+        nivel = "Bronze";
+    } else if (xp <= 5000) {
+        nivel = "Prata";
+    } else if (xp <= 7000) {
+        nivel = "Ouro";
+    } else if (xp <= 8000) {
+        nivel = "Platina";
+    } else if (xp <= 9000) {
+        nivel = "Ascendente";
+    } else if (xp <= 10000) {
+        nivel = "Imortal";
+    } else {
+        nivel = "Radiante";
+    }
+
+    return `O Herói de nome ${nomeHeroi} está no nível de ${nivel}`;
 }
-  console.log("O Herói de nome " + nameHero + " está no nível de " + nivel)
 
 
 
